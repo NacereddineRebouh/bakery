@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ---------------------Fonts--------------------- */
+:root {
+  --title: clamp(3.62rem, calc(-0.56rem + 10.88vw), 8.5rem);
+  --subhead: clamp(1.2rem, calc(0.82rem + 1vw), 2.53rem);
+  --button-text: clamp(0.98rem, calc(0.83rem + 0.54vw), 1.3rem);
+}
+.title {
+  font-size: var(--title);
+}
+
+.subhead {
+  font-size: var(--subhead);
+}
+
+.button-text {
+  font-size: var(--button-text);
+}
+
+/* ---------------------gap--------------------- */
+
+.gap {
+  --space-0: clamp(2.88rem, calc(0.75rem + 2.63vw), 7.5rem);
+  gap: var(--space-0) 0px;
+}
