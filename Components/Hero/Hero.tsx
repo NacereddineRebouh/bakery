@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import background from "@/public/Hero/1.png";
+import dotted_line from "@/public/Hero/2.png";
 //font
-import { Alegreya } from "@next/font/google";
-const al = Alegreya({
+import { Playfair_Display } from "@next/font/google";
+const al = Playfair_Display({
   subsets: ["latin"],
 });
 
@@ -30,10 +31,17 @@ export default function Hero({}: Props) {
           ></Image>
 
           {/* text */}
-          <div className="gap absolute top-0 bottom-0 right-0 left-0 mx-auto mb-0 flex w-full max-w-[1000px] flex-col items-center justify-center text-center text-stone-900 sm:mb-0">
-            <h1 className={`${al.className} title mx-1 text-stone-50 xs:mx-0`}>
+          <div className="gap title absolute top-0 bottom-0 right-0 left-0 mx-auto mb-0 flex w-full max-w-[1000px] flex-col items-center justify-center text-center text-stone-900 sm:mb-0">
+            <h1 className={`${al.className}  mx-1 text-stone-50 xs:mx-0`}>
               Pastry with love
             </h1>
+            <Image
+              src={dotted_line}
+              width={400}
+              height={400}
+              alt={"dotted_line"}
+              className={"w-[2.9em]"}
+            />
             <p
               className={`${ra.className} subhead mx-2 max-w-[1000px] font-light leading-tight tracking-widest text-stone-50 sm:mx-4 lg:mx-0`}
             >

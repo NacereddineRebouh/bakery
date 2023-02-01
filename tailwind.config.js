@@ -6,7 +6,23 @@ module.exports = {
     "./Components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        tussock: {
+          '50': '#fbf8f1',
+          '100': '#f5efdf',
+          '200': '#ebdcbd',
+          '300': '#dec293',
+          '400': '#d0a367',
+          '500': '#ca9558',
+          '600': '#b8773e',
+          '700': '#995f35',
+          '800': '#7b4c31',
+          '900': '#64402a',
+      },
+      
+      }
+    },
     screens: {
       'xs': '440px',
       // => @media (min-width: 440px) { ... }

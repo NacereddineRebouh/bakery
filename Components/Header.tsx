@@ -84,9 +84,18 @@ export default function Header({}: Props) {
 
           {/* CTA */}
           <div className="hidden items-center justify-center gap-x-8 xl:flex">
-            <FaTwitter className="h-5 w-5 cursor-pointer text-stone-50" />
-            <FaFacebookF className="h-5 w-5 cursor-pointer text-stone-50" />
-            <RxInstagramLogo className="h-5 w-5 cursor-pointer text-stone-50" />
+            <FaTwitter
+              tabIndex={0}
+              className="h-5 w-5 cursor-pointer text-stone-50 outline-none transition-all duration-150 focus:scale-125 active:scale-105"
+            />
+            <FaFacebookF
+              tabIndex={0}
+              className="h-5 w-5 cursor-pointer text-stone-50 outline-none transition-all duration-150 focus:scale-125 active:scale-105"
+            />
+            <RxInstagramLogo
+              tabIndex={0}
+              className="h-5 w-5 cursor-pointer text-stone-50 outline-none transition-all duration-150 focus:scale-125 active:scale-105"
+            />
           </div>
           <Menu.Button
             onClick={() => setIsOpen((isOpen) => !isOpen)}
