@@ -6,22 +6,19 @@ import art from "@/public/art of cakes/1.png";
 import sticker from "@/public/art of cakes/2.png";
 import Image from "next/image";
 
-import { Alegreya } from "@next/font/google";
+import { Alegreya, Raleway ,Dancing_Script,Playfair_Display} from "@next/font/google";
 const al = Alegreya({
   subsets: ["latin"],
 });
 
-import { Playfair_Display } from "@next/font/google";
 const play = Playfair_Display({
   subsets: ["latin"],
 });
 
-import { Dancing_Script } from "@next/font/google";
 const dance = Dancing_Script({
   subsets: ["latin"],
 });
 
-import { Raleway } from "@next/font/google";
 const ra = Raleway({
   subsets: ["latin"],
 });

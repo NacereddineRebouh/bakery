@@ -3,12 +3,11 @@ import React from "react";
 import background from "@/public/Hero/1.png";
 import dotted_line from "@/public/Hero/2.png";
 //font
-import { Playfair_Display } from "@next/font/google";
+import { Playfair_Display, Raleway } from "@next/font/google";
 const al = Playfair_Display({
   subsets: ["latin"],
 });
 
-import { Raleway } from "@next/font/google";
 const ra = Raleway({
   subsets: ["latin"],
 });
