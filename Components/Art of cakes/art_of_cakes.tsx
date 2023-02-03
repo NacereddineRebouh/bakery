@@ -6,7 +6,12 @@ import art from "@/public/art of cakes/1.png";
 import sticker from "@/public/art of cakes/2.png";
 import Image from "next/image";
 
-import { Alegreya, Raleway ,Dancing_Script,Playfair_Display} from "@next/font/google";
+import {
+  Alegreya,
+  Raleway,
+  Dancing_Script,
+  Playfair_Display,
+} from "@next/font/google";
 const al = Alegreya({
   subsets: ["latin"],
 });
@@ -76,7 +81,7 @@ export default function Art_of_cakes({}: Props) {
                 <span
                   className={`${dance.className} px-1 text-[1.4em] text-tussock-500`}
                 >
-                  Gutoso
+                  Gustoso
                 </span>
                 , We turn cake into art to create special memories. Our expert
                 bakers and decorators craft stunning and delicious cakes for all

@@ -75,7 +75,7 @@ export default function Breakfast({}: Props) {
           <div
             className={`${al.className} Breakfast flex max-h-[1000px] flex-col items-end justify-center text-center tracking-wide text-tussock-50 xl:w-2/5 xl:px-[1.4em] `}
           >
-            <div className="flex flex-col items-center justify-center gap-y-[.6em] xl:mr-[2em]">
+            <div className="flex flex-col items-center justify-center gap-y-[.6em] text-center xl:mr-[2em]">
               <div className="mb-[.6em] flex flex-col items-center gap-y-2">
                 <h1 className={`text-[1em] font-bold`}>Breakfast</h1>
                 <h2 className="text-[.4em] font-bold uppercase tracking-wide text-tussock-500">

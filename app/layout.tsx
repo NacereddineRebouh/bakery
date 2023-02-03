@@ -1,4 +1,6 @@
 import Art_of_cakes from "@/Components/Art of cakes/art_of_cakes";
+import Footer from "@/Components/Footer";
+
 import Header from "@/Components/Header";
 import Hero from "@/Components/Hero/Hero";
 import "@/styles/globals.css";
@@ -18,6 +20,9 @@ export default function RootLayout({
         </header>
 
         {children}
+        <footer id="footer" className="bg-[#f3f1e9] py-16">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

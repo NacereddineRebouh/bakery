@@ -24,9 +24,33 @@ body {
   --sticker: clamp(7rem, calc(4.22rem + 13.91vw), 15rem);
   --tasty: clamp(6.38rem, calc(7.42rem + 9.78vw), 15rem);
   --Breakfast: clamp(2.44rem, calc(1rem + 2.17vw), 4.8rem);
+  --sand: clamp(1.13rem, calc(-1.72rem + 14.21vw), 14.63rem);
+  --sand2: clamp(1.13rem, calc(-3.61rem + 23.66vw), 14.63rem);
+  --sand3: clamp(28vw, calc(-3.61rem + 23.66vw), 35vw);
 }
 .title {
   font-size: var(--title);
+}
+
+@media screen and (max-width: 1280px) {
+  .sand {
+    width: var(--sand2);
+    height: var(--sand2);
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .sand {
+    width: var(--sand);
+    height: var(--sand);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sand {
+    width: var(--sand3);
+    height: var(--sand3);
+  }
 }
 
 .subhead {
