@@ -25,7 +25,7 @@ export default function Head() {
       <meta
         name="image"
         property="og:image"
-        content="https://gustoso.vercel.app/og/og_image.jpg"
+        content="https://res.cloudinary.com/dttrs30gt/image/upload/v1675543535/gustoso/og_image_ytuunn.jpg"
       />
       {/* <meta
         name="description"
