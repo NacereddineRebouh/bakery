@@ -10,12 +10,8 @@ export default function Head() {
         content="we are bringing you fresh ingredients every day in ways you can't resist"
       />
 
-      <meta
-        name="url"
-        property="og:url"
-        content="https://gustoso.vercel.app/"
-      />
-      <meta name="type" property="og:type" content="website" />
+      <meta name="url" property="og:url" content="https://gustoso.vercel.app" />
+      <meta name="type" property="og:type" content="Landing Page" />
       <meta
         name="title"
         property="og:title"
@@ -31,26 +27,10 @@ export default function Head() {
         property="og:image"
         content="https://gustoso.vercel.app/og/og_image.jpg"
       />
-
-      {/* <!-- Twitter Meta Tags --> */}
-      <meta name="twitter:card" content="app" />
-      <meta property="twitter:domain" content="gustoso.vercel.app" />
-      <meta property="twitter:url" content="https://gustoso.vercel.app/" />
-      <meta name="twitter:title" content="Gustoso: Pastry with Love" />
-      <meta
-        name="twitter:description"
-        content="Innovative interiors: Our team of experienced designers will help you create beautiful and functional spaces that reflect your unique style and needs. Browse our portfolio and Get started."
-      />
-      <meta
-        name="twitter:image"
-        content="https://gustoso.vercel.app/og/og_image.jpg"
-      />
-      {/* -------twitter end------- */}
-
-      <meta
+      {/* <meta
         name="description"
         content="Gustoso: we are bringing you fresh ingredients every day in ways you can't resist."
-      />
+      /> */}
     </>
   );
 }
