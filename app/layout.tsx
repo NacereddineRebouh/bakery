@@ -1,9 +1,7 @@
-import Art_of_cakes from "@/Components/Art of cakes/art_of_cakes";
 import Footer from "@/Components/Footer";
-
 import Header from "@/Components/Header";
-import Hero from "@/Components/Hero/Hero";
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 export default function RootLayout({
   children,
 }: {
@@ -18,8 +16,8 @@ export default function RootLayout({
         <header id="header" className="absolute z-20">
           <Header />
         </header>
-
         {children}
+        <Analytics />
         <footer id="footer" className="bg-[#f3f1e9] pb-5 pt-16">
           <Footer />
         </footer>
