@@ -13,7 +13,7 @@ import { Alegreya } from "@next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { BsChevronDoubleRight } from "react-icons/bs";
 
-import pastery from "@/public/Breakfast/12.png";
+import pastery from "@/public/Breakfast/9.png";
 import outline from "@/public/Breakfast/10.png";
 
 const al = Alegreya({
@@ -79,7 +79,7 @@ export default function Tasty_pancakes({}: Props) {
     duree: 15,
   };
   const [current, setcurrent] = useState<number>(0);
-  const list: stuff[] = [p3, p2, p];
+  const list: stuff[] = [p, p2, p3];
   const [selected, setselected] = useState<stuff>(list[0]);
   const [ExitComplete, setExitComplete] = useState<boolean>(true);
 
@@ -114,25 +114,41 @@ export default function Tasty_pancakes({}: Props) {
     <div className="w-full">
       <div className="relative mx-auto flex min-h-[950px] w-full max-w-[2500px] flex-col items-center justify-center">
         {/* sticker */}
-        <div className="absolute -top-1 mx-auto flex h-2 w-full items-center justify-center bg-stone-50 drop-shadow-lg" />
-        <div className="absolute -top-14 right-0 left-0 mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-stone-50">
-          <Image
-            src={pastery}
-            alt={""}
-            width={80}
-            height={80}
-            className="z-10 w-20 opacity-70"
-          ></Image>
+        <div className="absolute top-0 mx-auto flex h-2 w-full items-center justify-center bg-stone-50">
+          <div className="absolute -top-12 right-0 left-0 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
+            <motion.div
+              variants={variants_bread}
+              initial={"initial"}
+              whileInView={"whileInView"}
+              transition={{ damping: 10, stiffness: 30, type: "spring" }}
+            >
+              <Image
+                src={pastery}
+                alt={""}
+                width={50}
+                height={50}
+                className="z-10 w-16"
+              ></Image>
+            </motion.div>
+          </div>
+
+          <motion.div
+            variants={variants_outline}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{ damping: 30, stiffness: 50, type: "spring" }}
+            className="absolute -top-16 right-0 left-0 mx-auto flex h-32 w-32 items-center justify-center rounded-full"
+          >
+            <Image
+              src={outline}
+              alt={""}
+              width={100}
+              height={100}
+              className="z-10 w-32 opacity-70"
+            ></Image>
+          </motion.div>
         </div>
-        <div className="absolute -top-20 right-0 left-0 mx-auto flex h-40 w-40 items-center justify-center rounded-full">
-          <Image
-            src={outline}
-            alt={""}
-            width={100}
-            height={100}
-            className="z-10 w-36 opacity-70"
-          ></Image>
-        </div>
+
         {/* background */}
         <Image
           src={background}
@@ -143,12 +159,30 @@ export default function Tasty_pancakes({}: Props) {
         ></Image>
         {/* Desktop and tablets */}
         <motion.div
-          layout
-          transition={{ ease: "easeInOut" }}
+          viewport={{ once: true }}
+          variants={variant}
+          initial={"initial"}
+          whileInView={"visible"}
+          transition={{
+            damping: 10,
+            stiffness: 30,
+            type: "spring",
+          }}
           className="tasty relative my-20 mx-[7rem] hidden h-[700px] max-w-[1420px] grid-cols-[0.95fr_1.05fr] flex-col items-center lg:grid xl:grid-cols-2 "
         >
           {/* ready in  */}
-          <div className="absolute -right-32 -top-10 flex h-[1em] w-[1em] flex-col items-center justify-center gap-y-3 drop-shadow-2xl">
+          <motion.div
+            viewport={{ once: true }}
+            variants={variant_ready}
+            initial={"initial"}
+            whileInView={"visible"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="absolute -right-32 -top-10 flex h-[1em] w-[1em] flex-col items-center justify-center gap-y-3 drop-shadow-2xl"
+          >
             <Image src={ready} alt={""} fill className={""} />
             <p
               className={`${al.className} z-10 text-[.1em] font-bold uppercase leading-[.13em] tracking-wide text-tussock-500`}
@@ -170,7 +204,7 @@ export default function Tasty_pancakes({}: Props) {
             >
               mins
             </p>
-          </div>
+          </motion.div>
           {/* left side */}
           <div className="relative -z-10 overflow-hidden">
             <AnimatePresence mode="wait">
@@ -204,6 +238,7 @@ export default function Tasty_pancakes({}: Props) {
             fill
             className={"background -z-10 h-[700px] object-cover drop-shadow-lg"}
           />
+
           {/* right side */}
           <div className="flex h-full max-h-[800px] flex-col overflow-hidden">
             <AnimatePresence
@@ -306,7 +341,15 @@ export default function Tasty_pancakes({}: Props) {
         {/* Mobiles */}
         <motion.div
           layout
-          transition={{ ease: "easeInOut" }}
+          viewport={{ once: true }}
+          variants={variant}
+          initial={"initial"}
+          whileInView={"visible"}
+          transition={{
+            damping: 10,
+            stiffness: 30,
+            type: "spring",
+          }}
           className="tasty relative my-20 mx-2 mb-28 grid max-h-[1000px] max-w-[1420px] grid-rows-2 flex-col items-center transition-shadow duration-200 xs:mx-[.2em] sm:mx-[.4em] lg:hidden"
         >
           {/* Top*/}
@@ -453,7 +496,7 @@ export default function Tasty_pancakes({}: Props) {
                         alt={""}
                         width={2000}
                         height={2000}
-                        className="min-h- col-start-1 self-start object-cover object-center"
+                        className="col-start-1 h-full min-h-[500px] object-cover object-center"
                       />
                     </motion.figure>
                   )
@@ -471,4 +514,34 @@ const spring = {
   type: "spring",
   stiffness: 200,
   damping: 50,
+};
+
+//animation
+const variants_bread = {
+  initial: { scale: 0.9, opacity: 0 },
+  whileInView: { scale: 1, opacity: 1 },
+};
+const variants_outline = {
+  initial: { opacity: 0, scale: 0.3, rotate: -380 },
+  whileInView: { opacity: 1, scale: 1, rotate: 0 },
+};
+
+const variant = {
+  initial: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
+
+const variant_ready = {
+  initial: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
 };

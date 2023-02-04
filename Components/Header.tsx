@@ -8,6 +8,7 @@ import logo from "@/public/logo/logo4.png";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { RxInstagramLogo } from "react-icons/rx";
+import { useMediaQuery } from "react-responsive";
 
 //font
 import { Alegreya } from "@next/font/google";
@@ -16,14 +17,12 @@ const al = Alegreya({
 });
 
 type Props = {};
-const variants = {
-  open: { innerHeight: "0" },
-  closed: { innerHeight: "-100%" },
-};
 
 export default function Header({}: Props) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const isMobile = useMediaQuery({
+    query: "(max-width: 868px)",
+  });
   return (
     <div
       className={`w-screen select-none text-zinc-100 transition-all duration-300 ${
@@ -34,17 +33,42 @@ export default function Header({}: Props) {
         <div className="mx-5 flex h-20 min-h-[48px] items-center justify-between sm:mx-20 xl:mx-32">
           {/* logo & navigation*/}
 
-          <Link
-            href="/"
-            className="relative flex w-24 cursor-pointer justify-start"
-            title="innovativeInteriors_logo"
+          <motion.div
+            viewport={{ once: false }}
+            variants={isMobile ? variants_logo_mobile : variants_logo}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
           >
-            <Image src={logo} alt={""} className="h-10 object-contain" />
-          </Link>
+            <Link
+              href="/"
+              className="relative flex w-24 cursor-pointer justify-start"
+              title="innovativeInteriors_logo"
+            >
+              <Image
+                src={logo}
+                alt={"Gustoso"}
+                className="h-10 object-contain"
+              />
+            </Link>
+          </motion.div>
 
           {/* navigation */}
-          <nav
-            className={`${al.className} hidden items-center  gap-x-5 text-sm tracking-[.2rem] text-stone-50 xl:flex 2xl:gap-x-6`}
+          <motion.nav
+            viewport={{ once: false }}
+            variants={variants_nav}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className={`${al.className} hidden items-center gap-x-[1.3em] text-[.87em] tracking-[.2rem] text-stone-50 xl:flex `}
           >
             <Link
               className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 uppercase transition-all duration-300 hover:text-stone-200 sm:flex"
@@ -80,10 +104,21 @@ export default function Header({}: Props) {
             >
               contact
             </Link>
-          </nav>
+          </motion.nav>
 
           {/* CTA */}
-          <div className="hidden items-center justify-center gap-x-8 xl:flex">
+          <motion.div
+            viewport={{ once: false }}
+            variants={variants_social}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="hidden items-center justify-center gap-x-8 xl:flex"
+          >
             <FaTwitter
               tabIndex={0}
               className="h-5 w-5 cursor-pointer text-stone-50 outline-none transition-all duration-150 focus:scale-125 active:scale-105"
@@ -96,7 +131,7 @@ export default function Header({}: Props) {
               tabIndex={0}
               className="h-5 w-5 cursor-pointer text-stone-50 outline-none transition-all duration-150 focus:scale-125 active:scale-105"
             />
-          </div>
+          </motion.div>
           <Menu.Button
             onClick={() => setIsOpen((isOpen) => !isOpen)}
             className="flex xl:hidden"
@@ -129,7 +164,7 @@ export default function Header({}: Props) {
           <Menu.Items className="mx-5 text-sm text-gray-500 sm:mx-20 xl:mx-32">
             {({ open }) => (
               <div className="flex overflow-hidden xl:hidden">
-                <AnimatePresence>
+                <AnimatePresence onExitComplete={() => setIsOpen(false)}>
                   {open && (
                     <motion.div
                       initial={{
@@ -220,3 +255,21 @@ export default function Header({}: Props) {
     </div>
   );
 }
+
+//animations
+const variants_nav = {
+  initial: { scale: 0.7, opacity: 0 },
+  whileInView: { scale: 1, opacity: 1 },
+};
+const variants_logo = {
+  initial: { scale: 0.2, opacity: 0, x: -120 },
+  whileInView: { scale: 1, opacity: 1, x: 0 },
+};
+const variants_logo_mobile = {
+  initial: { scale: 0.4, opacity: 0, x: -60 },
+  whileInView: { scale: 1, opacity: 1, x: 0 },
+};
+const variants_social = {
+  initial: { scale: 0.2, opacity: 0, x: 120 },
+  whileInView: { scale: 1, opacity: 1, x: 0 },
+};

@@ -32,14 +32,14 @@ body {
   font-size: var(--title);
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1279px) {
   .sand {
     width: var(--sand2);
     height: var(--sand2);
   }
 }
 
-@media screen and (min-width: 1281px) {
+@media screen and (min-width: 1280px) {
   .sand {
     width: var(--sand);
     height: var(--sand);

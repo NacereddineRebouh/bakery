@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import background from "@/public/Breakfast/4.jpg";
 import letter from "@/public/Breakfast/1.2.png";
-import croissant from "@/public/Breakfast/9.png";
+import croissant from "@/public/Breakfast/12.png";
 import outline from "@/public/Breakfast/10.png";
 import horn from "@/public/Breakfast/3.png";
 
@@ -12,7 +13,7 @@ import {
   Dancing_Script,
   Playfair_Display,
 } from "@next/font/google";
-import { MotionConfig } from "framer-motion";
+import { motion } from "framer-motion";
 const al = Alegreya({
   subsets: ["latin"],
 });
@@ -36,24 +37,39 @@ export default function Breakfast({}: Props) {
     <div className="w-full">
       <div className="relative mx-auto flex min-h-[850px] max-w-[2500px] flex-col">
         {/* sticker */}
-        <div className="absolute -top-1 mx-auto flex h-2 w-full items-center justify-center bg-stone-50 drop-shadow-lg" />
-        <div className="absolute -top-14 right-0 left-0 mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-stone-50">
-          <Image
-            src={croissant}
-            alt={""}
-            width={100}
-            height={100}
-            className="z-10 w-20 opacity-70"
-          ></Image>
-        </div>
-        <div className="absolute -top-20 right-0 left-0 mx-auto flex h-40 w-40 items-center justify-center rounded-full">
-          <Image
-            src={outline}
-            alt={""}
-            width={100}
-            height={100}
-            className="z-10 w-36 opacity-70"
-          ></Image>
+        <div className="absolute top-0 mx-auto flex h-2 w-full items-center justify-center bg-stone-50">
+          <div className="absolute -top-12 right-0 left-0 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
+            <motion.div
+              variants={variants_bread}
+              initial={"initial"}
+              whileInView={"whileInView"}
+              transition={{ damping: 10, stiffness: 30, type: "spring" }}
+            >
+              <Image
+                src={croissant}
+                alt={""}
+                width={50}
+                height={50}
+                className="z-10 w-[70px]"
+              ></Image>
+            </motion.div>
+          </div>
+
+          <motion.div
+            variants={variants_outline}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{ damping: 30, stiffness: 50, type: "spring" }}
+            className="absolute -top-16 right-0 left-0 mx-auto flex h-32 w-32 items-center justify-center rounded-full"
+          >
+            <Image
+              src={outline}
+              alt={""}
+              width={100}
+              height={100}
+              className="z-10 w-32 opacity-70"
+            ></Image>
+          </motion.div>
         </div>
 
         {/* background */}
@@ -72,7 +88,16 @@ export default function Breakfast({}: Props) {
           style={{ zIndex: 1 }}
         >
           {/* left side */}
-          <div
+          <motion.div
+            viewport={{ once: true }}
+            variants={variants_left_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
             className={`${al.className} Breakfast flex max-h-[1000px] flex-col items-end justify-center text-center tracking-wide text-tussock-50 xl:w-2/5 xl:px-[1.4em] `}
           >
             <div className="flex flex-col items-center justify-center gap-y-[.6em] text-center xl:mr-[2em]">
@@ -134,11 +159,20 @@ export default function Breakfast({}: Props) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* right side */}
 
-          <div
+          <motion.div
+            viewport={{ once: true }}
+            variants={variants_right_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
             className={`${al.className} relative mx-[1em] flex max-w-[500px] items-center justify-center xs:mx-[4em] xl:w-3/5 5xl:max-w-[800px]`}
           >
             <Image
@@ -167,9 +201,29 @@ export default function Breakfast({}: Props) {
                 READ
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
   );
 }
+
+//animation variants
+const variants_bread = {
+  initial: { scale: 0.9, opacity: 0 },
+  whileInView: { scale: 1, opacity: 1 },
+};
+const variants_outline = {
+  initial: { opacity: 0, scale: 0.3, rotate: -380 },
+  whileInView: { opacity: 1, scale: 1, rotate: 0 },
+};
+
+const variants_left_side = {
+  initial: { x: -200, opacity: 0 },
+  whileInView: { x: 0, opacity: 1 },
+};
+
+const variants_right_side = {
+  initial: { x: 200, opacity: 0 },
+  whileInView: { x: 0, opacity: 1 },
+};

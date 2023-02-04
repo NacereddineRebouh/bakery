@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import farm from "@/public/sandwich/1.png";
@@ -8,6 +9,7 @@ import sandwich from "@/public/sandwich/2.jpg";
 import ready from "@/public/sandwich/6.png";
 
 import { Raleway, Alegreya } from "@next/font/google";
+import { motion } from "framer-motion";
 const ra = Raleway({
   subsets: ["latin"],
 });
@@ -23,26 +25,73 @@ export default function Sandwich({}: Props) {
       <div
         className={`${al.className} relative mx-auto flex max-w-[2500px] select-none flex-col items-center justify-center bg-[#f3f1e9]`}
       >
+        {/* top */}
         <div className="absolute top-0 right-0 left-0 mx-auto flex h-[100px] items-center justify-center text-center">
-          <Image
-            src={farm}
-            alt={"small_farm"}
-            width={700}
-            height={700}
-            className="z-20 "
-          ></Image>
-          <div className="absolute -bottom-10 right-0 left-0 mx-auto flex flex-col">
-            <h1 className="mb-1 text-[2.2em] font-bold leading-none md:text-[2.8em]">
+          <motion.div
+            viewport={{ once: false }}
+            variants={variant_farm}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 50,
+              stiffness: 60,
+              type: "spring",
+            }}
+          >
+            <Image
+              src={farm}
+              alt={"small_farm"}
+              width={700}
+              height={700}
+              className="z-20 "
+            ></Image>
+          </motion.div>
+          <div className="absolute -bottom-10 right-0 left-0 mx-auto flex flex-col items-center justify-center">
+            <motion.h1
+              viewport={{ once: false }}
+              variants={variants_text}
+              initial={"initial"}
+              whileInView={"whileInView"}
+              transition={{
+                damping: 10,
+                stiffness: 35,
+                type: "spring",
+              }}
+              className="mb-1 text-[2.2em] font-bold leading-none md:text-[2.8em]"
+            >
               The Jibarito sandwich
-            </h1>
-            <h2 className="text-[.8em] font-bold uppercase tracking-wide text-tussock-500 md:text-[.9em]">
+            </motion.h1>
+            <motion.h2
+              viewport={{ once: false }}
+              variants={variants_text}
+              initial={"initial"}
+              whileInView={"whileInView"}
+              transition={{
+                damping: 10,
+                stiffness: 35,
+                type: "spring",
+                delay: 0.2,
+              }}
+              className="text-[.8em] font-bold uppercase tracking-wide text-tussock-500 md:text-[.9em]"
+            >
               The best sandwich you've ever tasted
-            </h2>
+            </motion.h2>
           </div>
         </div>
         <div className="mt-40 grid grid-rows-[1fr_auto_auto_auto] items-center justify-center gap-x-[1em] text-center xs:mx-5 sm:mx-20 md:grid-rows-[1fr_auto] xl:mx-32 xl:grid-cols-[1fr_2fr] xl:grid-rows-none">
           {/* Left side */}
-          <div className="mx-[2em] mt-8 flex flex-col gap-y-12 xl:mt-0">
+          <motion.div
+            viewport={{ once: false }}
+            variants={variants_left_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="mx-[2em] mt-8 flex flex-col gap-y-12 xl:mt-0"
+          >
             {/* #1 */}
             <div className="flex flex-col items-center justify-center gap-y-2">
               <Image
@@ -99,10 +148,21 @@ export default function Sandwich({}: Props) {
                 Lorem, Quo aspernatur ipsum. Ut, veritatis deleniti.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* details in mobile */}
-          <div className="z-20 mb-1 mt-12 flex w-full flex-row items-center justify-center gap-x-[5px] gap-y-[2px] text-sm md:hidden">
+          <motion.div
+            viewport={{ once: false }}
+            variants={variants_right_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="z-20 mb-1 mt-12 flex w-full flex-row items-center justify-center gap-x-[5px] gap-y-[2px] text-sm md:hidden"
+          >
             {/* 1st */}
             <div className="relative flex aspect-square w-1/3 flex-col items-center justify-around bg-white/80 py-4 backdrop-blur-[2px] sm:py-12">
               <p
@@ -158,10 +218,21 @@ export default function Sandwich({}: Props) {
                 mins
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* right side */}
-          <div className="relative flex h-full w-full max-w-[1200px] flex-col items-center justify-center md:py-[2em] xl:py-[6em] xl:pl-12">
+          <motion.div
+            viewport={{ once: false }}
+            variants={variants_right_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="relative flex h-full w-full max-w-[1200px] flex-col items-center justify-center md:py-[2em] xl:py-[6em] xl:pl-12"
+          >
             <Image
               src={sandwich}
               alt={"sandwich"}
@@ -237,15 +308,49 @@ export default function Sandwich({}: Props) {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* button in mobile */}
-          <button className="mt-2 flex w-full cursor-pointer items-center justify-center truncate border-2 border-dashed border-tussock-500 bg-tussock-300 py-[1em] px-[1.8em] text-[1em] font-bold uppercase tracking-widest text-tussock-600 lg:hidden lg:text-[1.4em] xl:left-0 xl:bottom-20">
+          <motion.button
+            viewport={{ once: true }}
+            variants={variant_button}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="mt-2 flex w-full cursor-pointer items-center justify-center truncate border-2 border-dashed border-tussock-500 bg-tussock-300 py-[1em] px-[1.8em] text-[1em] font-bold uppercase tracking-widest text-tussock-600 lg:hidden lg:text-[1.4em] xl:left-0 xl:bottom-20"
+          >
             Full recipe
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
   );
 }
-// f3f1e9
+
+//animation variants
+const variant_farm = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+};
+const variant_button = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+};
+const variants_text = {
+  initial: { opacity: 0, scale: 0.9 },
+  whileInView: { opacity: 1, scale: 1 },
+};
+
+const variants_left_side = {
+  initial: { x: -200, opacity: 0 },
+  whileInView: { x: 0, opacity: 1 },
+};
+
+const variants_right_side = {
+  initial: { x: 200, opacity: 0 },
+  whileInView: { x: 0, opacity: 1 },
+};

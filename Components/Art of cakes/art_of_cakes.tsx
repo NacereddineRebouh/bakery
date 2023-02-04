@@ -1,10 +1,13 @@
+"use client";
 import React from "react";
 import bread from "@/public/art of cakes/5.png";
+import bread2 from "@/public/art of cakes/6.png";
 import cover from "@/public/art of cakes/3.png";
 import chef from "@/public/art of cakes/4.png";
 import art from "@/public/art of cakes/1.png";
 import sticker from "@/public/art of cakes/2.png";
 import Image from "next/image";
+import outline from "@/public/Breakfast/10.png";
 
 import {
   Alegreya,
@@ -12,6 +15,7 @@ import {
   Dancing_Script,
   Playfair_Display,
 } from "@next/font/google";
+import { motion } from "framer-motion";
 const al = Alegreya({
   subsets: ["latin"],
 });
@@ -36,14 +40,38 @@ export default function Art_of_cakes({}: Props) {
       <div className="relative mx-auto flex min-h-[850px] max-w-[2500px] flex-col">
         {/* bread sticker */}
         <div className="mx-auto flex h-2 w-full items-center justify-center bg-stone-50">
-          <div className="absolute -top-9 mx-auto h-20 w-20 rounded-full bg-stone-50" />
-          <Image
-            src={bread}
-            alt={""}
-            width={110}
-            height={110}
-            className="z-10"
-          ></Image>
+          <div className="absolute -top-12 right-0 left-0 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
+            <motion.div
+              variants={variants_bread}
+              initial={"initial"}
+              whileInView={"whileInView"}
+              transition={{ damping: 10, stiffness: 30, type: "spring" }}
+            >
+              <Image
+                src={bread2}
+                alt={""}
+                width={50}
+                height={50}
+                className="z-10 w-16"
+              ></Image>
+            </motion.div>
+          </div>
+
+          <motion.div
+            variants={variants_outline}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{ damping: 30, stiffness: 50, type: "spring" }}
+            className="absolute -top-16 right-0 left-0 mx-auto flex h-32 w-32 items-center justify-center rounded-full"
+          >
+            <Image
+              src={outline}
+              alt={""}
+              width={100}
+              height={100}
+              className="z-10 w-32 opacity-70"
+            ></Image>
+          </motion.div>
         </div>
 
         {/* cover */}
@@ -61,7 +89,16 @@ export default function Art_of_cakes({}: Props) {
           style={{ zIndex: 1 }}
         >
           {/* left side */}
-          <div
+          <motion.div
+            viewport={{ once: true }}
+            variants={variants_left_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
             className={`${al.className} item-center art-head padding_left-art flex w-full flex-col items-center justify-center gap-y-[2.8em] text-center text-stone-700 xl:w-1/2`}
           >
             {/* title */}
@@ -121,11 +158,22 @@ export default function Art_of_cakes({}: Props) {
                 ”
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* right side */}
 
-          <div className="relative flex w-full items-center justify-center xl:w-1/2">
+          <motion.div
+            viewport={{ once: true }}
+            variants={variants_right_side}
+            initial={"initial"}
+            whileInView={"whileInView"}
+            transition={{
+              damping: 10,
+              stiffness: 30,
+              type: "spring",
+            }}
+            className="relative flex w-full items-center justify-center xl:w-1/2"
+          >
             <Image
               src={art}
               alt={"cakes"}
@@ -142,9 +190,29 @@ export default function Art_of_cakes({}: Props) {
                 "sticker-width absolute top-0 bottom-0 my-auto mx-auto drop-shadow-sm"
               }
             ></Image>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
   );
 }
+
+//animation variants
+const variants_left_side = {
+  initial: { x: -200, opacity: 0 },
+  whileInView: { x: 0, opacity: 1 },
+};
+
+const variants_right_side = {
+  initial: { x: 200, opacity: 0 },
+  whileInView: { x: 0, opacity: 1 },
+};
+
+const variants_bread = {
+  initial: { scale: 0.9, opacity: 0 },
+  whileInView: { scale: 1, opacity: 1 },
+};
+const variants_outline = {
+  initial: { opacity: 0, scale: 0.3, rotate: -380 },
+  whileInView: { opacity: 1, scale: 1, rotate: 0 },
+};

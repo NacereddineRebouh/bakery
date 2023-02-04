@@ -20,7 +20,7 @@ export default function RootLayout({
         </header>
 
         {children}
-        <footer id="footer" className="bg-[#f3f1e9] py-16">
+        <footer id="footer" className="bg-[#f3f1e9] pb-5 pt-16">
           <Footer />
         </footer>
       </body>
