@@ -7,20 +7,20 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="">
-      <section id="hero" className="snap-center">
+    <main>
+      <section id="hero">
         <Hero />
       </section>
-      <section id="Art_of_cakes" className="snap-center">
+      <section id="Art_of_cakes">
         <Art_of_cakes />
       </section>
-      <section id="Tasty_pancakes" className="snap-center">
+      <section id="Tasty_pancakes">
         <Tasty_pancakes />
       </section>
-      <section id="Breakfast" className="snap-center">
+      <section id="Breakfast">
         <Breakfast />
       </section>
-      <section id="Sandwich" className="snap-center">
+      <section id="Sandwich">
         <Sandwich />
       </section>
     </main>

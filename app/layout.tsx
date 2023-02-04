@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="snap-y snap-proximity overflow-x-hidden scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-[#685753] selection:bg-stone-300/70"
+      className="overflow-x-hidden scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-[#685753] selection:bg-stone-300/70"
     >
       <body className={`overflow-hidden`}>
         <header id="header" className="absolute z-20">

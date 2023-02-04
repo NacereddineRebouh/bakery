@@ -29,7 +29,7 @@ export default function Head() {
       <meta
         name="image"
         property="og:image"
-        content="https://gustoso.vercel.app/og/og_image.png"
+        content="https://gustoso.vercel.app/og/og_image.jpg"
       />
 
       {/* <!-- Twitter Meta Tags --> */}
@@ -43,7 +43,7 @@ export default function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://gustoso.vercel.app/og/og_image.png"
+        content="https://gustoso.vercel.app/og/og_image.jpg"
       />
       {/* -------twitter end------- */}
 
