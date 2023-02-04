@@ -28,7 +28,7 @@ export default function Sandwich({}: Props) {
         {/* top */}
         <div className="absolute top-0 right-0 left-0 mx-auto flex h-[100px] items-center justify-center text-center">
           <motion.div
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={variant_farm}
             initial={"initial"}
             whileInView={"whileInView"}
@@ -48,7 +48,7 @@ export default function Sandwich({}: Props) {
           </motion.div>
           <div className="absolute -bottom-10 right-0 left-0 mx-auto flex flex-col items-center justify-center">
             <motion.h1
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               variants={variants_text}
               initial={"initial"}
               whileInView={"whileInView"}
@@ -62,7 +62,7 @@ export default function Sandwich({}: Props) {
               The Jibarito sandwich
             </motion.h1>
             <motion.h2
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               variants={variants_text}
               initial={"initial"}
               whileInView={"whileInView"}
@@ -81,7 +81,7 @@ export default function Sandwich({}: Props) {
         <div className="mt-40 grid grid-rows-[1fr_auto_auto_auto] items-center justify-center gap-x-[1em] text-center xs:mx-5 sm:mx-20 md:grid-rows-[1fr_auto] xl:mx-32 xl:grid-cols-[1fr_2fr] xl:grid-rows-none">
           {/* Left side */}
           <motion.div
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={variants_left_side}
             initial={"initial"}
             whileInView={"whileInView"}
@@ -152,7 +152,7 @@ export default function Sandwich({}: Props) {
 
           {/* details in mobile */}
           <motion.div
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={variants_right_side}
             initial={"initial"}
             whileInView={"whileInView"}
@@ -222,7 +222,7 @@ export default function Sandwich({}: Props) {
 
           {/* right side */}
           <motion.div
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={variants_right_side}
             initial={"initial"}
             whileInView={"whileInView"}

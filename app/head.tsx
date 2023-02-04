@@ -13,7 +13,7 @@ export default function Head() {
       <meta
         name="url"
         property="og:url"
-        content="https://Gustoso.vercel.app/"
+        content="https://gustoso.vercel.app/"
       />
       <meta name="type" property="og:type" content="website" />
       <meta
@@ -29,13 +29,13 @@ export default function Head() {
       <meta
         name="image"
         property="og:image"
-        content="https://Gustoso.vercel.app/og/og_image.png"
+        content="https://gustoso.vercel.app/og/og_image.png"
       />
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="app" />
-      <meta property="twitter:domain" content="Gustoso.vercel.app" />
-      <meta property="twitter:url" content="https://Gustoso.vercel.app/" />
+      <meta property="twitter:domain" content="gustoso.vercel.app" />
+      <meta property="twitter:url" content="https://gustoso.vercel.app/" />
       <meta name="twitter:title" content="Gustoso: Pastry with Love" />
       <meta
         name="twitter:description"
@@ -43,7 +43,7 @@ export default function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://Gustoso.vercel.app/og/og_image.png"
+        content="https://gustoso.vercel.app/og/og_image.png"
       />
       {/* -------twitter end------- */}
 

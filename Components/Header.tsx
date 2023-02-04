@@ -34,7 +34,7 @@ export default function Header({}: Props) {
           {/* logo & navigation*/}
 
           <motion.div
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={isMobile ? variants_logo_mobile : variants_logo}
             initial={"initial"}
             whileInView={"whileInView"}
@@ -59,7 +59,7 @@ export default function Header({}: Props) {
 
           {/* navigation */}
           <motion.nav
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={variants_nav}
             initial={"initial"}
             whileInView={"whileInView"}
@@ -108,7 +108,7 @@ export default function Header({}: Props) {
 
           {/* CTA */}
           <motion.div
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             variants={variants_social}
             initial={"initial"}
             whileInView={"whileInView"}
