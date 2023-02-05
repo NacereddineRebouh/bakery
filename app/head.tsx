@@ -1,6 +1,11 @@
 export default function Head() {
   return (
     <>
+      <meta
+        name="image"
+        property="og:image"
+        content="https://res.cloudinary.com/dttrs30gt/image/upload/v1675543535/gustoso/og_image_ytuunn.jpg"
+      />
       {/* <!-- HTML Meta Tags --> */}
       <title>Gustoso: Pastry with Love</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -10,11 +15,6 @@ export default function Head() {
         name="title"
         property="og:title"
         content="Gustoso: Pastry with Love"
-      />
-      <meta
-        name="image"
-        property="og:image"
-        content="https://res.cloudinary.com/dttrs30gt/image/upload/v1675543535/gustoso/og_image_ytuunn.jpg"
       />
       <meta
         name="description"
