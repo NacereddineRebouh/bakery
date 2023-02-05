@@ -6,7 +6,7 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/logo/logo2.png" />
 
-      {/* <meta
+      <meta
         name="title"
         property="og:title"
         content="Gustoso: Pastry with Love"
@@ -20,7 +20,7 @@ export default function Head() {
         name="description"
         property="og:description"
         content="Gustoso: we are bringing you fresh ingredients every day in ways you can't resist."
-      ></meta> */}
+      ></meta>
       <meta name="url" property="og:url" content="https://gustoso.vercel.app" />
       <meta name="type" property="og:type" content="Landing Page" />
 
