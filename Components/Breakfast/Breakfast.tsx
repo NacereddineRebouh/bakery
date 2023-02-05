@@ -56,6 +56,7 @@ export default function Breakfast({}: Props) {
           </div>
 
           <motion.div
+            viewport={{ once: true }}
             variants={variants_outline}
             initial={"initial"}
             whileInView={"whileInView"}
