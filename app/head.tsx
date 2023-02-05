@@ -1,16 +1,16 @@
 export default function Head() {
   return (
     <>
-      <meta
-        name="image"
-        property="og:image"
-        content="https://res.cloudinary.com/dttrs30gt/image/upload/v1675543535/gustoso/og_image_ytuunn.jpg"
-      />
-      {/* <!-- HTML Meta Tags --> */}
-      <title>Gustoso: Pastry with Love</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/logo/logo2.png" />
 
+      <title key="title">Gustoso: Pastry with Love</title>
+      <meta
+        name="url"
+        property="og:url"
+        content="https://gustoso.vercel.app/"
+      />
+      <meta name="type" property="og:type" content="website" />
       <meta
         name="title"
         property="og:title"
@@ -21,13 +21,11 @@ export default function Head() {
         property="og:description"
         content="Gustoso: we are bringing you fresh ingredients every day in ways you can't resist."
       ></meta>
-      <meta name="url" property="og:url" content="https://gustoso.vercel.app" />
-      <meta name="type" property="og:type" content="Landing Page" />
-
-      {/* <meta
-        name="description"
-        content="Gustoso: we are bringing you fresh ingredients every day in ways you can't resist."
-      /> */}
+      <meta
+        name="image"
+        property="og:image"
+        content="https://res.cloudinary.com/dttrs30gt/image/upload/v1675543535/gustoso/og_image_ytuunn.jpg"
+      />
     </>
   );
 }
