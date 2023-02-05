@@ -19,7 +19,7 @@ export default function Head() {
       <meta
         name="description"
         property="og:description"
-        content="Gustoso: we are bringing you fresh ingredients every day in ways you can't resist."
+        content="Indulge in the tastiest flavors with Gustoso! Our daily fresh ingredients are combined to create irresistible dishes that will tantalize your taste buds. Get ready for a flavor explosion!"
       ></meta>
       <meta
         name="image"
