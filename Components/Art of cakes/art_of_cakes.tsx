@@ -42,6 +42,7 @@ export default function Art_of_cakes({}: Props) {
         <div className="mx-auto flex h-2 w-full items-center justify-center bg-stone-50">
           <div className="absolute -top-12 right-0 left-0 mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-stone-50">
             <motion.div
+              viewport={{ once: true }}
               variants={variants_bread}
               initial={"initial"}
               whileInView={"whileInView"}
