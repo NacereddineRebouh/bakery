@@ -4,8 +4,9 @@ export default function Head() {
       <meta
         name="image"
         property="og:image"
-        content="https://gustoso.vercel.app/og/ogimage.jpg"
-      />
+        content="https://the-state.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F2.3e438664.png&w=2048&q=100"
+     //  content="https://gustoso.vercel.app/og/ogimage.jpg"
+          />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/logo/logo2.png" />
 
