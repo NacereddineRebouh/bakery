@@ -58,6 +58,7 @@ export default function Art_of_cakes({}: Props) {
           </div>
 
           <motion.div
+            viewport={{ once: true }}
             variants={variants_outline}
             initial={"initial"}
             whileInView={"whileInView"}
