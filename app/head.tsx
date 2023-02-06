@@ -2,6 +2,14 @@ export default function Head() {
   return (
     <>
       <meta
+        property="image"
+        content="https://gustoso.vercel.app/og/ogimage.jpg"
+      />
+      <meta
+        property="description"
+        content="Indulge in the tastiest flavors with Gustoso! Our daily fresh ingredients are combined to create irresistible dishes that will tantalize your taste buds. Get ready for a flavor explosion!"
+      ></meta>
+      <meta
         name="image"
         property="og:image"
         content="https://gustoso.vercel.app/og/ogimage.jpg"
